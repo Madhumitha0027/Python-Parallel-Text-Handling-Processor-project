@@ -1,6 +1,6 @@
 import re
 
-# 🔥 Weighted Positive Rules
+#  Positive Rules
 positive_rules = {
     "excellent": 3,
     "amazing": 2,
@@ -9,7 +9,7 @@ positive_rules = {
     "love": 2
 }
 
-# 🔥 Weighted Negative Rules
+# Negative Rules
 negative_rules = {
     "terrible": -3,
     "bad": -1,
