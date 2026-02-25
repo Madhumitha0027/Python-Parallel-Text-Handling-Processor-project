@@ -63,13 +63,23 @@ The stored data is displayed in the Streamlit dashboard where users can view rec
 ---
 
 ## 📂 Project Structure
+
 parallel_text_processor/
 │
-├── ui/                 # Streamlit interface
-├── modules/            # Processing modules
-├── database/           # Database management
-├── benchmark_test.py   # Performance & scalability testing
-├── texts.db            # SQLite database
+├── ui/
+│   └── app.py                # Streamlit dashboard
+│
+├── modules/
+│   ├── text_loader.py        # Text chunking & parallel loader
+│   └── rule_engine.py        # Weighted sentiment scoring
+│
+├── database/
+│   └── db_manager.py         # SQLite database operations
+│
+├── benchmark_test.py         # Performance & scalability testing
+├── main.py                   # Core processing script
+├── texts.db                  # SQLite database file
+├── README.md
 
 ---
 
