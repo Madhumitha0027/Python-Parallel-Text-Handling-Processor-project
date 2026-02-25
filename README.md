@@ -64,6 +64,7 @@ The stored data is displayed in the Streamlit dashboard where users can view rec
 
 ## 📂 Project Structure
 
+```
 parallel_text_processor/
 │
 ├── ui/
@@ -80,7 +81,7 @@ parallel_text_processor/
 ├── main.py                   # Core processing script
 ├── texts.db                  # SQLite database file
 ├── README.md
-
+```
 ---
 
 ## ▶️ How to Run
