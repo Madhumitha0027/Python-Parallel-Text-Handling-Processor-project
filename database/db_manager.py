@@ -2,10 +2,6 @@ import sqlite3
 
 DB_NAME = "texts.db"
 
-
-# -------------------------------------------------
-# 🔥 CREATE TABLE + INDEX OPTIMIZATION
-# -------------------------------------------------
 def create_table():
 
     conn = sqlite3.connect(DB_NAME)
@@ -21,7 +17,6 @@ def create_table():
         )
     """)
 
-    # 🔥 DATABASE INDEX (Optimization)
     cursor.execute(
         "CREATE INDEX IF NOT EXISTS idx_tag ON texts(tag)"
     )
@@ -31,7 +26,7 @@ def create_table():
 
 
 # -------------------------------------------------
-# 🔥 SINGLE INSERT
+# SINGLE INSERT
 # -------------------------------------------------
 def insert_result(text, score, tag):
 
@@ -48,7 +43,7 @@ def insert_result(text, score, tag):
 
 
 # -------------------------------------------------
-# 🔥 BULK INSERT (executemany)
+# BULK INSERT (executemany)
 # -------------------------------------------------
 def bulk_insert(rows):
 
@@ -65,7 +60,7 @@ def bulk_insert(rows):
 
 
 # -------------------------------------------------
-# 🔥 FETCH ALL DATA
+# FETCH ALL DATA
 # -------------------------------------------------
 def fetch_all():
 
@@ -78,10 +73,6 @@ def fetch_all():
     conn.close()
     return data
 
-
-# -------------------------------------------------
-# 🔥 CLEAR TABLE (Testing kosam)
-# -------------------------------------------------
 def clear_table():
 
     conn = sqlite3.connect(DB_NAME)
