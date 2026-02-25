@@ -1,7 +1,6 @@
 import sys
 import os
 
-# Project root path add cheyadam (module error avoid)
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
 import streamlit as st
@@ -11,15 +10,13 @@ from database.db_manager import fetch_all, create_table, insert_result, clear_ta
 from modules.text_loader import split_text, parallel_process
 from modules.rule_engine import calculate_sentiment
 
-# 🔥 multiprocessing kosam function TOP LEVEL lo undali
 def process_chunk(chunk):
     score, tag = calculate_sentiment(chunk)
     insert_result(chunk, score, tag)
 
-# ---------------- UI SETTINGS ----------------
 st.set_page_config(page_title="Python Parallel Text Processor", layout="wide")
 
-# 🔥 Professional styling
+
 st.markdown("""
 <style>
 .block-container {
@@ -30,7 +27,7 @@ st.markdown("""
 
 st.title("📊 Python Parallel Text Processor — Dashboard")
 
-# ---------------- SIDEBAR ----------------
+
 st.sidebar.markdown("## ⚙️ Navigation Panel")
 st.sidebar.write("Python Parallel Text Processor")
 
@@ -39,13 +36,10 @@ page = st.sidebar.radio(
     ["Upload & Process", "Overview", "Analytics"]
 )
 
-# Ensure table exists
 create_table()
 
-# Load DB data
 data = fetch_all()
 
-# ---------------- PAGE 1 : UPLOAD ----------------
 if page == "Upload & Process":
 
     st.header("📂 Upload & Manage Text Files")
@@ -67,7 +61,6 @@ if page == "Upload & Process":
 
             st.success("✅ Processing Completed!")
 
-# ---------------- PAGE 2 : OVERVIEW ----------------
 elif page == "Overview":
 
     st.header("📋 Processed Records Overview")
@@ -78,7 +71,6 @@ elif page == "Overview":
     else:
         st.info("No data available")
 
-# ---------------- PAGE 3 : ANALYTICS ----------------
 elif page == "Analytics":
 
     st.header("📈 Analytics Dashboard")
