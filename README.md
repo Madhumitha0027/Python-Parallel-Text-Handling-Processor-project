@@ -49,19 +49,21 @@ Processed results are stored in an SQLite database. Indexing is used to improve 
 
 ## 📂 Project Structure
 
+```
 parallel_text_processor/
 │
 ├── modules/
-│   ├── text_loader.py
-│   └── rule_engine.py
+│   ├── text_loader.py        # Text chunking & parallel loader
+│   └── rule_engine.py        # Weighted sentiment scoring
 │
 ├── database/
-│   └── db_manager.py
+│   └── db_manager.py         # SQLite database operations
 │
-├── benchmark_test.py
-├── main.py
-├── texts.db
+├── benchmark_test.py         # Performance & scalability testing
+├── main.py                   # Core processing script
+├── texts.db                  # SQLite database file
 ├── README.md
+```
 
 ---
 
