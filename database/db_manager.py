@@ -2,6 +2,7 @@ import sqlite3
 
 DB_NAME = "texts.db"
 
+
 def create_table():
 
     conn = sqlite3.connect(DB_NAME)
@@ -25,9 +26,6 @@ def create_table():
     conn.close()
 
 
-# -------------------------------------------------
-# SINGLE INSERT
-# -------------------------------------------------
 def insert_result(text, score, tag):
 
     conn = sqlite3.connect(DB_NAME)
@@ -42,9 +40,6 @@ def insert_result(text, score, tag):
     conn.close()
 
 
-# -------------------------------------------------
-# BULK INSERT (executemany)
-# -------------------------------------------------
 def bulk_insert(rows):
 
     conn = sqlite3.connect(DB_NAME)
@@ -59,9 +54,6 @@ def bulk_insert(rows):
     conn.close()
 
 
-# -------------------------------------------------
-# FETCH ALL DATA
-# -------------------------------------------------
 def fetch_all():
 
     conn = sqlite3.connect(DB_NAME)
@@ -72,6 +64,7 @@ def fetch_all():
 
     conn.close()
     return data
+
 
 def clear_table():
 
