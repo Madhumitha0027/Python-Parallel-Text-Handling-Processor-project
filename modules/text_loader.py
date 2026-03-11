@@ -8,4 +8,5 @@ def split_text(text, size=200):
 
 def parallel_process(chunks, process_function):
     with ProcessPoolExecutor(max_workers=4) as executor:
-        executor.map(process_function, chunks)
+        results = list(executor.map(process_function, chunks))
+    return results
